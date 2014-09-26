@@ -749,7 +749,7 @@
                 startDate = this.leftCalendar.calendar[row][col];
                 endDate = this.endDate;
                 if (typeof this.dateLimit === 'object') {
-                    var maxDate = moment(startDate).add(this.dateLimit).startOf('day');
+                    var maxDate = moment(startDate).add(this.dateLimit);
                     if (endDate.isAfter(maxDate)) {
                         endDate = maxDate;
                     }
@@ -758,7 +758,7 @@
                 startDate = this.startDate;
                 endDate = this.rightCalendar.calendar[row][col];
                 if (typeof this.dateLimit === 'object') {
-                    var minDate = moment(endDate).subtract(this.dateLimit).startOf('day');
+                    var minDate = moment(endDate).subtract(this.dateLimit);
                     if (startDate.isBefore(minDate)) {
                         startDate = minDate;
                     }
